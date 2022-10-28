@@ -1,0 +1,33 @@
+<view class="content">
+  <view class="counter">{{scripture.count}}</view>
+  <view bindtap="toggleBgSound" class="{{['btn-ico','btn-sound',bgSound.active?'active':'']}}">声音</view>
+  <view bindtap="toggleVibrate" class="{{['btn-ico','btn-vibrate',vibrate.active?'active':'']}}">振动</view>
+  <!-- <view class="god-img">
+      <image width="400rpx" height="500rpx" src="{{settings.godImg}}"></image>
+  </view> -->
+  <view bindtap="knock" class="{{['muyu-wrap',knocked?'active':'']}}" wx:if="{{settings}}">
+    <view animation="{{muyuAnimationData}}" class="muyu">
+      <view>
+        <image src="{{settings.muyu}}"></image>
+      </view>
+    </view>
+    <view animation="{{stickAnimationData}}" class="stick">
+      <view>
+        <image src="{{settings.gu}}"></image>
+      </view>
+    </view>
+    <view class="content">
+      <view class="fly" wx:for="{{knockContent.data}}" wx:for-index="i" wx:key="i">{{item}}</view>
+    </view>
+  </view>
+  <view bindtap="{{autoKnocked.enable?'autoKnocked':'preAutoKnock'}}" class="{{['btn-ico','btn-auto',autoKnocked.enable?'active':'']}}">自动</view>
+  <view class="{{['pop-wrap','exit-pop',videoConfirm.active?'active':'']}}">
+    <view class="content">
+      <view class="mt">观看视频广告开启自动敲击？</view>
+      <view class="st">一天内无需再次观看广告</view>
+      <view bindtap="stayPage" class="btn wait">放弃</view>
+      <view bindtap="autoKnock" class="btn leave">开启</view>
+    </view>
+  </view>
+  <pop-hint bind:__l="__l" bind:close="onPopClose" bind:unlock="onUnlockSucc" model="{{popHint.model}}" user="{{user}}" visible="{{popHint.active}}" vueId="8dd740cc-2"></pop-hint>
+</view>

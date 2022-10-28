@@ -1,0 +1,317 @@
+page {
+    background-color: #000;
+}
+
+page>.content {
+    background: #000;
+}
+
+.user {
+    background: #000 !important;
+    border: none;
+    display: flex;
+    line-height: normal;
+    padding: 35rpx 0;
+    position: relative;
+    text-align: left;
+}
+
+.user::after {
+    display: none;
+}
+
+.user .avatar {
+    border-radius: 50%;
+    box-shadow: 0 0 10rpx 3rpx hsla(0, 0%, 100%, .4);
+    height: 150rpx;
+    margin: 0 35rpx 0 20rpx;
+    overflow: hidden;
+    width: 150rpx;
+}
+
+.user .avatar image {
+    height: 100%;
+    width: 100%;
+}
+
+.user .name {
+    color: #fff;
+    font-size: 38rpx;
+    font-weight: 700;
+    height: 48rpx;
+    line-height: 48rpx;
+    overflow: hidden;
+    padding: 20rpx 0 15rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300rpx;
+}
+
+.user .point {
+    color: #999;
+    font-size: 30rpx;
+}
+
+.user .btn {
+    background: #ecd358;
+    border-radius: 50rpx;
+    color: #fff;
+    height: 70rpx;
+    line-height: 70rpx;
+    position: absolute;
+    right: 20rpx;
+    text-align: center;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 200rpx;
+}
+
+.user .btn.no {
+    background-color: #ccc;
+}
+
+.meta {
+    align-items: center;
+    background: #1a1a1a;
+    border-radius: 20rpx;
+    display: flex;
+    height: 170rpx;
+    margin: 10rpx auto 40rpx;
+    width: 700rpx;
+}
+
+.meta>view {
+    flex: 1;
+    text-align: center;
+}
+
+.meta>view>view {
+    color: #fff;
+    font-size: 34rpx;
+}
+
+.my-nav {
+    padding-bottom: 10rpx;
+}
+
+.my-nav .nav {
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 38rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin: 0 35rpx;
+    padding: 0;
+    position: relative;
+    text-align: left;
+}
+
+.my-nav .nav::before {
+    background: #d0d0d0;
+    bottom: 5rpx;
+    content: "";
+    height: 2rpx;
+    position: absolute;
+    right: 0;
+    width: 610rpx;
+}
+
+.my-nav .nav.feedback::before {
+    display: none;
+}
+
+.my-nav .nav::after {
+    background: url(https://muyu.wx.h5work.com/app/remote/images/ico-12.png?v=202210051) no-repeat;
+    background-size: 100%;
+    border: none;
+    content: "";
+    height: 30rpx;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 20rpx;
+}
+
+.my-nav .nav view {
+    background-color: #000;
+    padding-left: 80rpx;
+}
+
+.my-nav .nav view::before {
+    background: url(https://muyu.wx.h5work.com/app/remote/images/ico-8.png?v=202210051) no-repeat;
+    background-size: 100%;
+    content: "";
+    height: 40rpx;
+    left: 12rpx;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 34rpx;
+}
+
+.my-nav .nav.rank view::before {
+    background-image: url(https://muyu.wx.h5work.com/app/remote/images/ico-9.png?v=202210051);
+    width: 38rpx;
+}
+
+.my-nav .nav.feedback view::before {
+    background-image: url(https://muyu.wx.h5work.com/app/remote/images/ico-10.png?v=202210051);
+    width: 42rpx;
+}
+
+.my-nav .btn-nav-login {
+    height: 360rpx;
+    opacity: 0;
+    position: fixed;
+    top: 420rpx;
+    width: 100%;
+}
+
+.task {
+    background-color: #f7f8f9 !important;
+}
+
+.task .banner {
+    background: url(https://muyu.wx.h5work.com/app/remote/images/bg-task.jpg?v=202210051) no-repeat;
+    background-size: 100%;
+    height: 400rpx;
+    position: fixed;
+    width: 100%;
+}
+
+.task scroll-view {
+    bottom: 0;
+    position: fixed;
+    top: 400rpx;
+    width: 100%;
+}
+
+.task .item {
+    background: #fff;
+    margin-bottom: 1rpx;
+    padding: 34rpx;
+    position: relative;
+}
+
+.task .item .mt {
+    color: #555;
+    font-size: 34rpx;
+    margin-bottom: 10rpx;
+}
+
+.task .item .st {
+    font-size: 28rpx;
+}
+
+.task .item .btn {
+    background: #ecd358;
+    border-radius: 50rpx;
+    color: #fff;
+    height: 70rpx;
+    line-height: 70rpx;
+    position: absolute;
+    right: 40rpx;
+    text-align: center;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 145rpx;
+}
+
+.task .item .btn::after {
+    display: none;
+}
+
+.task .item .btn.got {
+    background: #d8d8d8;
+    color: #999;
+}
+
+.rank {
+    background-color: #f7f8f9 !important;
+}
+
+.rank .banner {
+    background: url(https://muyu.wx.h5work.com/app/remote/images/bg-rank.jpg?v=202210051) no-repeat;
+    background-size: 100%;
+    height: 400rpx;
+    position: fixed;
+    width: 100%;
+}
+
+.rank scroll-view {
+    bottom: 164rpx;
+    position: fixed;
+    top: 400rpx;
+    width: 100%;
+}
+
+.rank .item {
+    align-items: center;
+    background: #fff;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 1rpx;
+    padding: 32rpx;
+    position: relative;
+    width: 100%;
+}
+
+.rank .item:nth-child(n+4) .r {
+    font-size: 40rpx;
+}
+
+.rank .item.my-rank {
+    bottom: 0;
+    margin: 0;
+    position: fixed;
+}
+
+.rank .r {
+    color: #555;
+    font-size: 60rpx;
+    min-width: 40rpx;
+    text-align: center;
+}
+
+.rank .avatar {
+    background: #333;
+    border-radius: 50%;
+    height: 100rpx;
+    margin: 0 20rpx;
+    overflow: hidden;
+    width: 100rpx;
+}
+
+.rank .avatar image {
+    height: 100%;
+    width: 100%;
+}
+
+.rank .name {
+    color: #555;
+    flex: 1;
+    overflow: hidden;
+    padding-right: 20rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rank .point {
+    font-size: 26rpx;
+    text-align: right;
+    width: 190rpx;
+}
+
+.rank .point .mt {
+    color: #555;
+    font-size: 38rpx;
+}
+
+@media (min-height:680px) and (max-height:808px) {
+    .rank scroll-view {
+        bottom: 172rpx;
+    }
+}

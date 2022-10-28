@@ -1,0 +1,39 @@
+<view class="content">
+    <view class="user">
+        <view class="avatar">
+            <image mode="aspectFill" src="{{user.headimgurl}}" wx:if="{{user.headimgurl}}"></image>
+            <image mode="aspectFill" src="{{avatarImage}}" wx:else></image>
+        </view>
+        <view>
+            <view class="name" wx:if="{{user.nickname}}">{{user.nickname}}</view>
+            <view class="name" wx:else>微信用户</view>
+            <view bindtap="signin" class="btn">
+                每日签到
+            </view>
+        </view>
+    </view>
+    <view class="meta">
+        <view>
+            <view wx:if="{{!user||user.muyu_times==0}}">- -</view>
+            <block wx:else>
+                <view wx:if="{{user.muyu_times>9999999}}">9999999+次</view>
+                <view wx:else>{{user.muyu_times+'次'}}</view>
+            </block>敲一敲
+        </view>
+        <view>
+            <view wx:if="{{!user||user.merits==0}}">- -</view>
+            <block wx:else>
+                <view wx:if="{{user.merits>9999999}}">9999999+</view>
+                <view wx:else>{{user.merits}}</view>
+            </block>功德值
+        </view>
+    </view>
+    <view class="my-nav">
+        <navigator class="nav task" url="/pages/my/task">
+            <view>每日任务</view>
+        </navigator>
+        <button class="nav feedback" openType="contact" sendMessageTitle="意见反馈">
+            <view>意见反馈</view>
+        </button>
+    </view>
+</view>

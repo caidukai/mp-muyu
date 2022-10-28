@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "电子木鱼",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#A0A0A0",
+    "selectedColor": "#ECD358",
+    "borderStyle": "white",
+    "backgroundColor": "#000",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "/static/images/nav1.png",
+      "selectedIconPath": "/static/images/nav1a.png",
+      "text": "敲一敲"
+    }, {
+      "pagePath": "pages/my/index",
+      "iconPath": "/static/images/nav4.png",
+      "selectedIconPath": "/static/images/nav4a.png",
+      "text": "我的"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,234 @@
+.btn-ico {
+  font-size: 20rpx;
+  padding-top: 50rpx;
+  text-align: center;
+}
+
+.btn-setting {
+  background: 50% 0 url(https://muyu.xiaolinwl.com/static/img/ico-setting.png) no-repeat;
+  height: 40rpx;
+  left: 30rpx;
+  position: fixed;
+  top: 40rpx;
+}
+
+.btn-setting,.btn-setting.active {
+  background-size: 40rpx 40rpx;
+  width: 50rpx;
+}
+
+.btn-setting.active {
+  background-image: url(https://muyu.xiaolinwl.com/static/img/ico-setting-active.png);
+}
+
+.btn-bgm {
+  background: 50% 0 url(https://muyu.xiaolinwl.com/static/img/ico-bgm-stop.png) no-repeat;
+  height: 40rpx;
+  position: fixed;
+  right: 30rpx;
+  top: 40rpx;
+}
+
+.btn-bgm,.btn-bgm.active {
+  background-size: 42rpx 40rpx;
+  width: 50rpx;
+}
+
+.btn-bgm.active {
+  background-image: url(https://muyu.xiaolinwl.com/static/img/ico-bgm-play.png);
+}
+
+.btn-sound {
+  background: 50% 0 url(https://muyu.xiaolinwl.com/static/img/ico-audio-stop.png) no-repeat;
+  background-size: 20rpx 30rpx;
+  height: 30rpx;
+  position: fixed;
+  right: 30rpx;
+  top: 40rpx;
+  width: 50rpx;
+}
+
+.btn-sound.active {
+  background-image: url(https://muyu.xiaolinwl.com/static/img/ico-audio-play.png);
+  background-size: 35rpx 30rpx;
+  width: 50rpx;
+}
+
+.btn-vibrate {
+  background: 50% 0 url(https://muyu.xiaolinwl.com/static/img/ico-vibrate-stop.png) no-repeat;
+  height: 40rpx;
+  position: fixed;
+  right: 30rpx;
+  top: 160rpx;
+  z-index: 9;
+}
+
+.btn-vibrate,.btn-vibrate.active {
+  background-size: 42rpx 40rpx;
+  width: 50rpx;
+}
+
+.btn-vibrate.active {
+  background-image: url(https://muyu.xiaolinwl.com/static/img/ico-vibrate-active.png);
+}
+
+.btn-auto {
+  background: 50% 0 url(https://muyu.xiaolinwl.com/static/img/ico-auto-unable.png) no-repeat;
+  height: 40rpx;
+  position: fixed;
+  right: 30rpx;
+  top: 280rpx;
+}
+
+.btn-auto,.btn-auto.active {
+  background-size: 42rpx 40rpx;
+  width: 50rpx;
+}
+
+.btn-auto.active {
+  background-image: url(https://muyu.xiaolinwl.com/static/img/ico-auto.png);
+}
+
+.speed {
+  display: none;
+  font-size: 26rpx;
+  left: 90rpx;
+  position: absolute;
+  top: 44rpx;
+}
+
+.speed.active {
+  display: block;
+}
+
+.counter {
+  color: #ecd358;
+  font-size: 80rpx;
+  position: fixed;
+  text-align: center;
+  top: 10rpx;
+  width: 100%;
+}
+
+.god-img {
+  height: 500rpx;
+  overflow: hidden;
+  position: absolute;
+  top: 140rpx;
+  width: 100%;
+  z-index: -1;
+  text-align: center;
+}
+
+.lyric .inner view {
+  font-size: 36rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.lyric .inner view.active {
+  color: #fff;
+}
+
+.muyu-wrap {
+  bottom: 100rpx;
+  height: 364rpx;
+  position: fixed;
+  width: 100%;
+}
+
+.muyu-wrap.active .muyu {
+  animation: ani_muyu_knock .06s linear alternate;
+}
+
+.muyu-wrap.active .stick {
+  animation: ani_stick .06s linear alternate;
+}
+
+.muyu-wrap .muyu {
+  margin: auto;
+}
+
+.muyu-wrap .muyu>view {
+  height: 450rpx;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 450rpx;
+}
+
+.muyu-wrap .muyu>view image {
+  height: 460rpx;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%,-50%,0);
+  width: 460rpx;
+}
+
+.muyu-wrap .stick {
+  height: 350rpx;
+  position: absolute;
+  right: 50rpx;
+  top: -60rpx;
+  width: 350rpx;
+}
+
+.muyu-wrap .stick>view {
+  height: 350rpx;
+  overflow: hidden;
+  position: relative;
+  width: 350rpx;
+}
+
+.muyu-wrap .stick>view image {
+  height: 360rpx;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%,-50%,0);
+  width: 360rpx;
+}
+
+.muyu-wrap .content {
+  position: absolute;
+  text-align: center;
+  top: -100rpx;
+  width: 100%;
+}
+
+.muyu-wrap .content .fly {
+  animation: ani_fly 1s forwards;
+  font-size: 40rpx;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@-webkit-keyframes ani_fly {
+  50% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+      transform: translate3d(0,-200rpx,0);
+  }
+}
+
+@keyframes ani_fly {
+  50% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+      transform: translate3d(0,-200rpx,0);
+  }
+}
+
+@media (min-height:680px) and (max-height:808px) {
+  .muyu {
+      bottom: 210rpx;
+  }
+}
