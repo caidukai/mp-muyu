@@ -3,6 +3,6 @@
   "projectname": "mp-muyu",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false
+    "urlCheck": true
   }
 }

@@ -156,8 +156,8 @@ Page({
     this.setData({
       "scripture.dataOfAni": this.data.scripture.animation.export()
     })
-    clearInterval(this.autoKnocked.timer)
-    clearInterval(this.scripture.timer)
+    this.autoKnocked&&this.autoKnocked.timer&&clearInterval(this.autoKnocked.timer)
+    this.scripture&&this.scripture.timer&&clearInterval(this.scripture.timer)
   },
   audioFn: function () {
     const innerAudioContext = wx.createInnerAudioContext()
@@ -218,8 +218,14 @@ Page({
           wx.setStorageSync('lastAdTime', new Date().getTime())
           this.autoKnockHandle()
         } else {
+          wx.showToast({
+            title: '未观看结束，无法自动',
+          })
           // 播放中途退出，不下发游戏奖励
         }
+      })
+      rewardedVideoAd.onError((err) => {
+        console.log(err)
       })
     }
 
@@ -255,20 +261,31 @@ Page({
   },
   onLoad() {
     let that = this
-    if (app.globalData.settings) {
-      that.setData({
-        settings: app.globalData.settings,
-        autoKnocked: app.globalData.settings.autoKnocked
-      })
-    } else {
-      app.settingInfoCallback = (settingInfo) => {
-        that.setData({
-          settings: settingInfo,
-          autoKnocked: settingInfo.autoKnocked
-        })
-      }
+    let a = {
+      "muyu": "/static/images/muyu.png",
+      "gu": "/static/images/gu.png",
+      "knockContent": [
+        "功德 +1"
+      ],
+      "audio": {
+        "url": "/static/images/muyu-2.mp3"
+      },
+      "godImg": "/static/images/god.png",
+      "autoKnocked": {
+        "enable": false,
+        "timer": null,
+        "speed": 800,
+        "times": 666,
+        "unlimited": true
+      },
+      "adIsOpen": true,
+      "chaPingAdId": "adunit-7460a7510882280a",
+      "videoAdId": "adunit-fe4c25747c87555f"
     }
-
+    that.setData({
+            settings: a,
+            autoKnocked: a.autoKnocked
+          })
     wx.nextTick(res => {
       if (that.data.settings.adIsOpen && that.data.settings.chaPingAdId) {
         if (wx.createInterstitialAd) {
@@ -293,61 +310,41 @@ Page({
     this.reset()
   },
   onShareAppMessage() {
-    const promise = new Promise(resolve => {
-      setTimeout(() => {
-        resolve({
-          title: "解压电子木鱼，净化心灵！快来试一试吧！",
-          path: "/pages/index/index",
-          imageUrl: "https://muyu.xiaolinwl.com/static/img/share.jpg"
-        })
-      }, 2000)
-    })
     return {
       title: "解压电子木鱼，净化心灵！快来试一试吧！",
       path: "/pages/index/index",
-      imageUrl: "https://muyu.xiaolinwl.com/static/img/share.jpg",
-      promise
+      imageUrl: "/static/images/share.jpg",
     }
   },
   onShareTimeline: function () {
-    const promise = new Promise(resolve => {
-      setTimeout(() => {
-        resolve({
-          title: "解压电子木鱼，净化心灵！快来试一试吧！",
-          path: "/pages/index/index",
-          imageUrl: "https://muyu.xiaolinwl.com/static/img/share.jpg"
-        })
-      }, 2000)
-    })
     return {
       title: "解压电子木鱼，净化心灵！快来试一试吧！",
       path: "/pages/index/index",
-      imageUrl: "https://muyu.xiaolinwl.com/static/img/share.jpg",
-      promise
+      imageUrl: "/static/img/share.jpg",
     }
   },
   onHide(e) {
     this.reset()
   },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    })
-  },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
+  // getUserProfile(e) {
+  //   // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+  //   wx.getUserProfile({
+  //     desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+  //     success: (res) => {
+  //       console.log(res)
+  //       this.setData({
+  //         userInfo: res.userInfo,
+  //         hasUserInfo: true
+  //       })
+  //     }
+  //   })
+  // },
+  // getUserInfo(e) {
+  //   // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
+  //   console.log(e)
+  //   this.setData({
+  //     userInfo: e.detail.userInfo,
+  //     hasUserInfo: true
+  //   })
+  // }
 })

@@ -44,7 +44,7 @@
   height: 30rpx;
   position: fixed;
   right: 30rpx;
-  top: 40rpx;
+  top: 150rpx;
   width: 50rpx;
 }
 
@@ -59,7 +59,7 @@
   height: 40rpx;
   position: fixed;
   right: 30rpx;
-  top: 160rpx;
+  top: 260rpx;
   z-index: 9;
 }
 
@@ -77,7 +77,7 @@
   height: 40rpx;
   position: fixed;
   right: 30rpx;
-  top: 280rpx;
+  top: 370rpx;
 }
 
 .btn-auto,.btn-auto.active {
@@ -101,14 +101,7 @@
   display: block;
 }
 
-.counter {
-  color: #ecd358;
-  font-size: 80rpx;
-  position: fixed;
-  text-align: center;
-  top: 10rpx;
-  width: 100%;
-}
+
 
 .god-img {
   height: 500rpx;
@@ -231,4 +224,16 @@
   .muyu {
       bottom: 210rpx;
   }
+}
+
+/* me */
+.cc-wrap{
+  position: relative;
+  padding-top: 120rpx;
+}
+.text-orange {
+  color: #ecd358;
+  font-size: 80rpx;
+  text-align: center;
+  width: 100%;
 }
